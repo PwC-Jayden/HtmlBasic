@@ -1,0 +1,20 @@
+{
+  "name": "template",
+  "description": "a template for new project",
+  "main": "index.html",
+  "authors": [
+    "Xiaohui Ni"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "template"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
+    "requirejs": "^2.3.2",
+    "moment": "^2.17.1"
+  }
+}
