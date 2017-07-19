@@ -6,10 +6,10 @@
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="html,css,js" />
 	<meta name="description" content="for MS Team Training" />
-	<meta name="author" content="Shawn,xiaohui.ni@pwc.com" />
-	<meta name="copyright" content="pwc sdc" />
+	<meta name="author" content="Xiaohui,xiaohui.ni@pwc.com" />
+	<meta name="copyright" content="MIT" />
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> -->
-	<meta name="viewport" content="width=375, initial-scale=1, maximum-scale=1, minimum-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=0.5, user-scalable=no" />
 	<meta name="renderer" content="webkit" />
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -21,22 +21,62 @@
 
 	<base href="http://localhost:3000/views/" />
 	<base target="_self" />
-<!-- 	<base target="_blank"> -->
+<!-- 	<base target="_blank" /> -->
+
+	<style></style>
 
 	<link rel="stylesheet" href="/stylesheet/common.css" />
 </head>
-<body>
-	<header></header>
-
-	<section>		
+<body class="addBorder">
+	<p class="caption">body</p>
+	<header class="addBorder">
+		<p class="caption">header</p>
 		<h1>Hello Genius!!!</h1>
-		<h2></h2>
-		<script src="/javascript/app.js"></script>
-		<a href="http://www.baidu.com">go to baidu</a>
-		<br />
-		<a href="test.html">go to test</a>
+	</header>
+
+	<nav class="addBorder">
+		<p class="caption">nav</p>
+		<a href="example_01.html">Example 2</a>
+		<a href="test.html">Example 3</a>
+		<a href="test.html">Example 4</a>
+	</nav>
+
+	<section class="addBorder">
+		<p class="caption">section</p>
+		<div id="left_side" class="addBorder">
+			<p class="caption">left side</p>
+		</div>
+		<div id="right_side" class="addBorder">
+			<p class="caption">right side</p>
+			<ol>
+				<li>
+					HTML Introduction
+				</li>
+				<li>
+					CSS Introduction
+				</li>
+				<li>
+					LESS/SASS/Stylus/PostCss Introduction
+				</li>
+				<li>
+					Responsive Design Introduction
+				</li>
+				<li>
+					
+				</li>
+				<li>
+					
+				</li>
+			</ol>
+		</div>
 	</section>
 
-	<footer></footer>
+	<footer class="addBorder">
+		<p class="caption">footer</p>
+	</footer>
+
+	<script src="/javascript/app.js" defer></script>
+	<script src="/javascript/libs/jquery.min.js" async></script>
+	<script src="/javascript/libs/lodash.min.js" async></script>
 </body>
 </html>

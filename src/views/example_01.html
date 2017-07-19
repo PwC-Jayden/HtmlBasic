@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo</title>
+
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="html,css,js" />
+	<meta name="description" content="for MS Team Training" />
+	<meta name="author" content="Xiaohui,xiaohui.ni@pwc.com" />
+	<meta name="copyright" content="MIT" />
+
+	<base href="http://localhost:3000/views/" />
+	<base target="_self" />
+
+	<style></style>
+
+	<link rel="stylesheet" href="/stylesheet/common.css" />
+	<link rel="stylesheet" href="/stylesheet/example_01.css">
+</head>
+<body class="addBorder">
+	<p class="caption">body</p>
+	<header class="addBorder">
+		<p class="caption">header</p>
+		<h1>HTML Elements</h1>
+	</header>
+
+	<nav class="addBorder">
+		<p class="caption">nav</p>		
+		<a href="index.html">Home</a>
+		<a href="example_01.html">Example 2</a>
+		<a href="test.html">Example 3</a>
+		<a href="test.html">Example 4</a>
+	</nav>
+
+	<section class="addBorder">
+		<p class="caption">section</p>
+		<fieldset>				
+			<legend>
+				Basic Usefule Elements
+			</legend>
+
+			<div>
+				<p>progress bar</p>
+				<progress value="22" max="100"></progress>
+			</div>
+
+			<div>
+				<p>datalist</p>
+				<input list="browsers" name="browser">
+				<datalist id="browsers">
+					<option value="Internet Explorer">
+					<option value="Firefox">
+					<option value="Chrome">
+					<option value="Opera">
+					<option value="Safari">
+				</datalist>
+			</div>
+
+			<div>
+				<p>select</p>
+				<select>
+					<option value="volvo">Volvo</option>
+					<option value="saab">Saab</option>
+					<option value="opel">Opel</option>
+					<option value="audi">Audi</option>
+				</select>
+			</div>
+
+			<div>
+				<p>optiongroup select</p>
+				<select>
+					<optgroup label="Swedish Cars">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+					</optgroup>
+					<optgroup label="German Cars">
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</optgroup>
+				</select>
+			</div>
+
+			<div>
+				<p>textarea</p>
+				<textarea rows="10" cols="30">
+					我是一个文本框。
+				</textarea>
+			</div>			
+		</fieldset>
+
+		<fieldset>
+			<legend>Form elements</legend>
+			<form action="">
+				<div>First name: <input type="text" name="fname"><br></div>
+				<div>Last name: <input type="text" name="lname"><br></div>
+
+				<div><input type="radio" name="gender" value="male"> Male<br></div>
+				<div><input type="radio" name="gender" value="女"> 女<br></div>
+				
+				<div><input type="checkbox" name="vehicle[]" value="Bike"> 我有一辆自行车<br></div>
+				<div><input type="checkbox" name="vehicle[]" value="Car"> 我有一辆小轿车<br></div>
+				<div><input type="checkbox" name="vehicle[]" value="Boat"> 我有一艘船<br></div>
+						
+				<div>选择颜色: <input type="color" name="favcolor"><br></div>
+
+				<div>日期: <input type="date" name="bday"><br></div>
+				<div>日期和时间):<input type="datetime-local" name="bdaytime"><br></div>
+				<div>选择周: <input type="week" name="week_year"><br></div>
+				<div>选择月和年 ): <input type="month" name="bdaymonth"><br></div>
+				<div>选择时间: <input type="time" name="usr_time"><br></div>
+
+				<div>E-mail: <input type="email" name="usremail"><br></div>
+
+				<div>选择一个文件: <input type="file" name="img"><br></div>
+
+				<div>hidden<input type="hidden" name="country" value="Norway"><br></div>
+
+				<div>image button<input type="image" src="../resource/img_submit.gif" alt="Submit"><br></div>
+
+				<div>数量 ( 1 到 5 之间): <input type="number" name="quantity" min="1" max="5"><br></div>
+
+				<div>Password<input type="password" name="pwd"><br></div>
+
+
+				<div>range bar<input type="range" name="points" min="1" max="10"><br></div>
+
+				<div>Search Google: <input type="search" name="googlesearch"><br></div>
+
+				<div>电话号码: <input type="tel" name="usrtel"><br></div>
+
+				<div>添加你的主页: <input type="url" name="homepage"><br></div>
+
+				<div><input type="reset"></div>
+			</form>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Canvas
+			</legend>
+			<p>aaa</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				SVG
+			</legend>
+			<p>aaa</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Audio
+			</legend>
+			<p>aaa</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Video
+			</legend>
+			<p>aaa</p>
+		</fieldset>
+	</section>
+
+	<footer class="addBorder">
+		<p class="caption">footer</p>
+	</footer>
+
+	<script src="/javascript/app.js" defer></script>
+	<script src="/javascript/libs/jquery.min.js" async></script>
+	<script src="/javascript/libs/lodash.min.js" async></script>
+</body>
+</html>
