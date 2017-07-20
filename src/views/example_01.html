@@ -90,7 +90,7 @@
 
 		<fieldset>
 			<legend>Form elements</legend>
-			<form action="">
+			<form action="" oninput="result.value=parseInt(range.value)">
 				<div>First name: <input type="text" name="fname"><br></div>
 				<div>Last name: <input type="text" name="lname"><br></div>
 
@@ -115,14 +115,14 @@
 
 				<div>hidden<input type="hidden" name="country" value="Norway"><br></div>
 
-				<div>image button<input type="image" src="../resource/img_submit.gif" alt="Submit"><br></div>
+				<div>image button<input type="image" src="../resource/img_submit.gif" alt="button"><br></div>
 
 				<div>数量 ( 1 到 5 之间): <input type="number" name="quantity" min="1" max="5"><br></div>
 
 				<div>Password<input type="password" name="pwd"><br></div>
 
 
-				<div>range bar<input type="range" name="points" min="1" max="10"><br></div>
+				<div>range bar<input id="range" type="range" name="points" min="1" max="10"><input type="output" for="range" name="result"><br></div>
 
 				<div>Search Google: <input type="search" name="googlesearch"><br></div>
 
@@ -138,28 +138,42 @@
 			<legend>
 				Canvas
 			</legend>
-			<p>aaa</p>
+			<div>
+				<h3>Clock - Canvas + javascript</h3>
+				<canvas id="clock" width="500" height="500">
+					Your browser dose not support
+				</canvas>
+			</div>
 		</fieldset>
 
 		<fieldset>
 			<legend>
 				SVG
 			</legend>
-			<p>aaa</p>
+			<div id="horse"></div>
 		</fieldset>
 
 		<fieldset>
 			<legend>
 				Audio
 			</legend>
-			<p>aaa</p>
+			<audio controls>
+				<source src="/resource/horse.ogg" />
+				<source src="/resource/horse.mp3" >
+				您的浏览器不支持 audio 元素。
+			</audio>
 		</fieldset>
 
 		<fieldset>
 			<legend>
 				Video
 			</legend>
-			<p>aaa</p>
+			
+			<video width="320" height="240" controls>
+				<source src="/resource/movie.mp4"	type="video/mp4">
+				<source src="/resource/movie.ogg"	type="video/ogg">
+				您的浏览器不支持 HTML5 video 标签。
+			</video>
 		</fieldset>
 	</section>
 
@@ -167,7 +181,8 @@
 		<p class="caption">footer</p>
 	</footer>
 
-	<script src="/javascript/app.js" defer></script>
+	<script src="/javascript/example_01.js" defer></script>
+	<script src="/javascript/horse.js" defer></script>
 	<script src="/javascript/libs/jquery.min.js" async></script>
 	<script src="/javascript/libs/lodash.min.js" async></script>
 </body>
