@@ -4,10 +4,10 @@
   "description": "a template for new project",
   "main": "index.html",
   "scripts": {
-    "dev"   :  "gulp --env dev",
+    "build"   :  "gulp --env dev",
     "test"  :  "gulp test --env test",
     "prod"  :  "gulp --env prod",
-    "watch" :  "gulp watch"
+    "dev" :  "gulp watch"
   },
   "devDependencies": {
     "bower": ">=1.8.0",

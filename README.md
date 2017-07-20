@@ -18,11 +18,11 @@ Build Project:
 		refer to package.json
 
 Developing Project:
-	>npm run watch
+	>npm run dev
 
 How to use:
 1. >npm install
 2. >bower install
-3. >npm run dev
-4. >npm run watch
+3. >npm run build
+4. >npm run dev
 5. start "startserver.cmd" in dev folder

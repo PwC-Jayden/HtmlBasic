@@ -162,6 +162,17 @@
 				<source src="/resource/horse.mp3" >
 				您的浏览器不支持 audio 元素。
 			</audio>
+
+			<div id="recording">
+				<button onclick="startRecording(this);">record</button>
+				<button onclick="stopRecording(this);" disabled>stop</button>
+				
+				<h2>Recordings</h2>
+				<ul id="recordingslist"></ul>
+				
+				<h2>Log</h2>
+				<pre id="log"></pre>
+			</div>
 		</fieldset>
 
 		<fieldset>
@@ -183,6 +194,8 @@
 
 	<script src="/javascript/example_01.js" defer></script>
 	<script src="/javascript/horse.js" defer></script>
+	<script src="/javascript/recorderApp.js" defer></script>
+	<script src="/javascript/recorder.js" defer></script>
 	<script src="/javascript/libs/jquery.min.js" async></script>
 	<script src="/javascript/libs/lodash.min.js" async></script>
 </body>
