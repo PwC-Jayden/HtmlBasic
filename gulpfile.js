@@ -1,19 +1,20 @@
 //	Import modules for job
-var gulp 		= require('gulp');
-var del 		= require('del');					//	delete folders
-// var htmlmin = require('gulp-html-minifier');
-var less 		= require('gulp-less');				//	transfer less to css
-var minifycss 	= require('gulp-clean-css');		//	minify css code
-var uglify 		= require('gulp-uglify');			//	minify js code
-var imagemin 	= require('gulp-imagemin');
-var imageminOptipng = require('imagemin-optipng');
-var imageminJpegtran = require('imagemin-jpegtran');
-// var rename = require("gulp-rename");
-var gulpSequence = require('gulp-sequence');		// task sychronose tools
-var argv 		= require('yargs').argv;			//	for passing arguments from command line
-var jshint 		= require('gulp-jshint');			//	for js code check
-var qunit 		= require('gulp-qunit');			//	for qunit test
-var browserSync = require("browser-sync").create();	//	auto refresh browser after change
+const gulp 		= require('gulp');
+const del 		= require('del');					//	delete folders
+// const htmlmin = require('gulp-html-minifier');
+const less 		= require('gulp-less');				//	transfer less to css
+const minifycss 	= require('gulp-clean-css');		//	minify css code
+const uglify 		= require('gulp-uglify');			//	minify js code
+const imagemin 	= require('gulp-imagemin');
+const imageminOptipng = require('imagemin-optipng');
+const imageminJpegtran = require('imagemin-jpegtran');
+// const rename = require("gulp-rename");
+const gulpSequence = require('gulp-sequence');		// task sychronose tools
+const argv 		= require('yargs').argv;			//	for passing arguments from command line
+const jshint 		= require('gulp-jshint');			//	for js code check
+const qunit 		= require('gulp-qunit');			//	for qunit test
+const browserSync = require("browser-sync").create();	//	auto refresh browser after change
+const babel = require('gulp-babel');		//	translate ES6 to ES5
 
 
 //	Define constant
@@ -93,10 +94,8 @@ gulp.task('js', function() {
 	// Minify and copy all JavaScript (except vendor scripts) 
 	// with sourcemaps all the way down
 	if(argv.env == ENV_Production) {
-		gulp.src(paths.venderJS)
-		.pipe(gulp.dest(paths.venderJSDest));
-
 		return gulp.src(paths.appjs)
+		.pipe(babel({presets: ['es2015']}))
 		// .pipe(sourcemaps.init())
 		.pipe(uglify())
 		// .pipe(concat('all.min.js'))
@@ -108,6 +107,7 @@ gulp.task('js', function() {
 		.pipe(gulp.dest(paths.venderJSDest));
 		
 		return gulp.src(paths.appjs)
+		.pipe(babel({presets: ['es2015']}))
 		.pipe(gulp.dest(paths.appjsDest))
 		.pipe(browserSync.reload({stream:true}));
 	}
@@ -121,7 +121,9 @@ gulp.task("copy", function(){
 	// 	.pipe(gulp.dest(paths.appjsonDest));
 	// }
 
-	return gulp.src(paths.appjson)
+	return gulp.src(paths.venderJS)
+	.pipe(gulp.dest(paths.venderJSDest)),
+	gulp.src(paths.appjson)
 	.pipe(gulp.dest(paths.appjsonDest)),
 	gulp.src(paths.appviews)
 	.pipe(gulp.dest(paths.appviewsDest)),
