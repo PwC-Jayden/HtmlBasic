@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSS Introduction</title>
+
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="html,css,js" />
+	<meta name="description" content="for MS Team Training" />
+	<meta name="author" content="Xiaohui,xiaohui.ni@pwc.com" />
+	<meta name="copyright" content="MIT" />
+
+	<base href="http://localhost:3000/views/" />
+	<base target="_self" />
+
+	<style></style>
+
+	<link rel="stylesheet" href="/stylesheet/common.css" />
+	<link rel="stylesheet" href="/stylesheet/css_introduction.css">
+	<link rel="stylesheet" href="/stylesheet/shakehead.css">
+</head>
+<body class="addBorder">
+	<p class="caption">body</p>
+	<header class="addBorder">
+		<p class="caption">header</p>
+		<h1>CSS Induction</h1>
+	</header>
+
+	<nav class="addBorder">
+		<p class="caption">nav</p>		
+		<a href="index.html">Home</a>
+		<a href="http://www.runoob.com/css/css-tutorial.html">Basic Tutorial</a>
+	</nav>
+
+	<section class="addBorder">
+		<p class="caption">section</p>
+		<fieldset id="box_model">				
+			<legend>
+				Box Model
+			</legend>
+			<div>
+				<img src="/resource/box-model.gif" alt="box model">
+			</div>
+
+			<div>
+				<div class="addBorder example-box">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				2D/3D Transform
+			</legend>
+			<div>
+				<a href="http://www.runoob.com/css3/css3-2dtransforms.html">2D Transform</a>
+			</div>
+			<div>
+				<a href="http://www.runoob.com/css3/css3-3dtransforms.html">3D Transform</a>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Transition
+			</legend>
+
+			<div>
+				<a href="http://www.runoob.com/css3/css3-transitions.html">Transition</a>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				Animation
+			</legend>
+			
+			<div>
+				<a href="http://www.runoob.com/css3/css3-animations.html">Animation</a>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Full Example</legend>
+			<div class="wrapper">
+				<div class="border-circle" id="one"></div>
+				<div class="border-circle" id="two"></div>
+				<div class="background-circle">
+					<div class="triangle-light"></div>
+					<div class="body"></div>
+					<span class="shirt-text">I</span>
+					<span class="shirt-text">♥</span>
+					<span class="shirt-text">C</span>
+					<span class="shirt-text">S</span>
+					<span class="shirt-text">S</span>
+					<div class="triangle-dark"></div>
+				</div>
+				<div class="head">
+					<div class="ear" id="left"></div>
+					<div class="ear" id="right"></div>
+					<div class="hair-main">
+						<div class="sideburn" id="left"></div>
+						<div class="sideburn" id="right"></div>
+						<div class="hair-top"></div>
+					</div>
+					<div class="face">
+						<div class="hair-bottom"></div>
+						<div class="nose"></div>
+						<div class="eye-shadow" id="left">
+							<div class="eyebrow"></div>
+							<div class="eye"></div>
+						</div>
+						<div class="eye-shadow" id="right">
+							<div class="eyebrow"></div>
+							<div class="eye"></div>
+						</div>
+						<div class="mouth"></div>
+						<div class="shadow-wrapper">
+							<div class="shadow"></div>
+						</div>
+					</div>
+				</div>
+				<span class="music-note" id="one">&#9835;</span>
+				<span class="music-note" id="two">&#9834;</span>
+			</div>
+		</fieldset>
+	</section>
+
+	<footer class="addBorder">
+		<p class="caption">footer</p>
+	</footer>
+
+	<script src="/javascript/libs/jquery.min.js" async></script>
+	<script src="/javascript/libs/lodash.min.js" async></script>
+	<script src="/javascript/recorder.js" async></script>
+
+</body>
+</html>
