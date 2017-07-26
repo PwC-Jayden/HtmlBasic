@@ -1,20 +1,20 @@
 //	Import modules for job
-const gulp 		= require('gulp');
-const del 		= require('del');					//	delete folders
+const gulp 				= require('gulp');
+const del 				= require('del');					//	delete folders
 // const htmlmin = require('gulp-html-minifier');
-const less 		= require('gulp-less');				//	transfer less to css
-const minifycss 	= require('gulp-clean-css');		//	minify css code
-const uglify 		= require('gulp-uglify');			//	minify js code
-const imagemin 	= require('gulp-imagemin');
-const imageminOptipng = require('imagemin-optipng');
-const imageminJpegtran = require('imagemin-jpegtran');
+const less 				= require('gulp-less');				//	transfer less to css
+const minifycss 		= require('gulp-clean-css');		//	minify css code
+const uglify 			= require('gulp-uglify');			//	minify js code
+const imagemin 			= require('gulp-imagemin');
+const imageminOptipng 	= require('imagemin-optipng');
+const imageminJpegtran 	= require('imagemin-jpegtran');
 // const rename = require("gulp-rename");
-const gulpSequence = require('gulp-sequence');		// task sychronose tools
-const argv 		= require('yargs').argv;			//	for passing arguments from command line
-const jshint 		= require('gulp-jshint');			//	for js code check
-const qunit 		= require('gulp-qunit');			//	for qunit test
-const browserSync = require("browser-sync").create();	//	auto refresh browser after change
-const babel = require('gulp-babel');		//	translate ES6 to ES5
+const gulpSequence 		= require('gulp-sequence');		// task sychronose tools
+const argv 				= require('yargs').argv;			//	for passing arguments from command line
+const jshint 			= require('gulp-jshint');			//	for js code check
+const qunit 			= require('gulp-qunit');			//	for qunit test
+const browserSync 		= require("browser-sync").create();	//	auto refresh browser after change
+const babel 			= require('gulp-babel');		//	translate ES6 to ES5
 
 
 //	Define constant

@@ -64,3 +64,71 @@ section {
 		float: none !important;
 	}
 }
+
+.flex-container {
+	width: 90%;
+	margin-bottom: 10px;
+	
+	//	flex settings
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;	//	vertical alignment
+	align-items: center;	//	horizontal alignment
+
+	>div {
+		width: 100px;
+		margin: 10px;
+		background: yellow;
+		text-align: center;
+		//	flex settings
+		flex-grow: 1;
+
+		&:nth-of-type(1) {
+			height: 50px;
+		}
+
+		&:nth-of-type(2) {
+			height: 100px;
+		}
+
+		&:nth-of-type(3) {
+			height: 70px;
+		}
+	}
+
+	&:nth-of-type(1) {
+		align-items: flex-start;
+	}
+
+	&:nth-of-type(2) {
+		>div:nth-of-type(1) {
+			order: 3;
+		}
+
+		>div:nth-of-type(2) {
+			order: 2;
+		}
+
+		>div:nth-of-type(3) {
+			order: 1;
+		}
+	}
+
+	&:nth-of-type(3) {
+		align-items: flex-end;
+		flex-wrap: wrap;
+
+		>div:nth-of-type(1) {
+			flex-grow: 0;
+		}
+	}
+
+	&:nth-of-type(4) {
+		align-items: flex-end;
+
+		>div:nth-of-type(1) {
+			flex-shrink: 0;
+		}
+	}
+}
