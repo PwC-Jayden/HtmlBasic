@@ -192,23 +192,117 @@ class Circle extends Shape {
     }
 }
 			</pre>
-
 		</fieldset>
 
 		<fieldset>
-			<legend></legend>
+			<legend>Iterators</legend>
 			<pre>
-				
-			</pre>
+let a = {a:1, b:2, c:3};
+for(let i of Object.keys(a))console.log(i);
+for(let i of Object.values(a))console.log(i);
 
+for(let i in Object.values(a))console.log(i)
+			</pre>
 		</fieldset>
 
 		<fieldset>
-			<legend></legend>
+			<legend>Set</legend>
 			<pre>
-				
+let s = new Set(["hi", "byebye", "hi"]);
+s.add("hello").add("goodbye").add("hello");
+s.size === 2;
+s.has("hello") === true;
+for (let key of s.values()) // insertion order
+    console.log(key);
 			</pre>
+		</fieldset>
 
+		<fieldset>
+			<legend>Map</legend>
+			<pre>
+let m = new Map();
+let s = Symbol();
+m.set("hello", 42);
+m.set(s, 34);
+m.get(s) === 34;
+m.size === 2;
+for (let [ key, val ] of m.entries())
+    console.log(key.toString() + " = " + val);
+			</pre>
+		</fieldset>
+
+		<fieldset>
+			<legend>New Built-In Methods</legend>
+			<pre>
+[ 1, 3, 4, 2 ].find(x => x > 3) // 4
+
+[ 1, 3, 4, 2 ].findIndex(x => x > 3) // 2
+
+"foo".repeat(3);
+			</pre>
+		</fieldset>
+
+		<fieldset>
+			<legend>Intl</legend>
+			<pre>
+var l10nUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+var l10nGBP = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
+var l10nEUR = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
+console.log(l10nUSD.format(100200300.40));
+console.log(l10nGBP.format(100200300.40));
+console.log(l10nEUR.format(100200300.40));
+
+var date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+
+// formats below assume the local time zone of the locale;
+// America/Los_Angeles for the US
+
+// US English uses month-day-year order
+console.log(new Intl.DateTimeFormat('en-US').format(date));
+// → "12/20/2012"
+
+// British English uses day-month-year order
+console.log(new Intl.DateTimeFormat('en-GB').format(date));
+// → "20/12/2012"
+
+// Korean uses year-month-day order
+console.log(new Intl.DateTimeFormat('ko-KR').format(date));
+			</pre>
+		</fieldset>
+
+		<fieldset>
+			<legend>Promise</legend>
+			<pre>
+var getJSON = function(url) {
+  var promise = new Promise(function(resolve, reject){
+    var client = new XMLHttpRequest();
+    client.open("GET", url);
+    client.onreadystatechange = handler;    
+    client.responseType = "application/json";
+    client.setRequestHeader("Accept", "application/json");
+    client.send();
+
+    function handler() {
+      if (this.readyState !== 4) {
+        return;
+      }
+      if (this.status === 200) {
+        resolve(this.responseText);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+  });
+
+  return promise;
+};
+
+getJSON("/mockdata/data.json").then(function(json) {
+  console.log('Contents: ' + json);
+}, function(error) {
+  console.error('出错了', error);
+});
+			</pre>
 		</fieldset>
 	</section>
 

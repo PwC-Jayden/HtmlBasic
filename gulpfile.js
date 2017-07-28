@@ -1,14 +1,12 @@
 //	Import modules for job
 const gulp 				= require('gulp');
 const del 				= require('del');					//	delete folders
-// const htmlmin = require('gulp-html-minifier');
 const less 				= require('gulp-less');				//	transfer less to css
 const minifycss 		= require('gulp-clean-css');		//	minify css code
 const uglify 			= require('gulp-uglify');			//	minify js code
 const imagemin 			= require('gulp-imagemin');
 const imageminOptipng 	= require('imagemin-optipng');
 const imageminJpegtran 	= require('imagemin-jpegtran');
-// const rename = require("gulp-rename");
 const gulpSequence 		= require('gulp-sequence');		// task sychronose tools
 const argv 				= require('yargs').argv;			//	for passing arguments from command line
 const jshint 			= require('gulp-jshint');			//	for js code check
@@ -27,15 +25,10 @@ const ENV_UnitTest 		= "devtest";
 var destDir, JsonConfig, JsonConfigDest;
 if(argv.env == ENV_Production){
 	destDir = "./dist";
-	// JsonConfig = "src/Content/json/config.json";
-	// JsonConfigDest = destDir + "/Content/json";
 }else if(argv.env == ENV_UnitTest){
 	destDir = "./devtest";
 }else{
 	destDir = "./dev";
-	// JsonConfig = "src/Content/json/config-mock.json";
-	// JsonConfig = "src/Content/json/config.json";
-	// JsonConfigDest = destDir + "/Content/json";
 }
 
 
@@ -64,14 +57,6 @@ gulp.task('clean', function() {
 	return del(destDir);
 });
 
-// deal with html
-// gulp.task('minify-html', function() {
-//   gulp.src('./src/*.html')
-//     .pipe(htmlmin({collapseWhitespace: true}))
-//     .pipe(gulp.dest('./dist'))
-// });
-
-
 // Transfer less to css, and do minification
 gulp.task('less', function () {
 	if(argv.env == ENV_Production) {
@@ -91,15 +76,10 @@ gulp.task('less', function () {
 
 // Copying and minifying js files
 gulp.task('js', function() {
-	// Minify and copy all JavaScript (except vendor scripts) 
-	// with sourcemaps all the way down
 	if(argv.env == ENV_Production) {
 		return gulp.src(paths.appjs)
 		.pipe(babel({presets: ['es2015']}))
-		// .pipe(sourcemaps.init())
 		.pipe(uglify())
-		// .pipe(concat('all.min.js'))
-		// .pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.appjsDest))
 		.pipe(browserSync.reload({stream:true}));
 	}else{
@@ -113,11 +93,6 @@ gulp.task('js', function() {
 
 //	Copying files to target folder
 gulp.task("copy", function(){
-	// if(gulp.env._ == "dev"){
-	// 	gulp.src([paths.appjson, '!src/Content/json/config.json'])
-	// 	.pipe(gulp.dest(paths.appjsonDest));
-	// }
-
 	return gulp.src(paths.venderJS)
 	.pipe(gulp.dest(paths.venderJSDest)),
 	gulp.src(paths.appjson)
@@ -150,21 +125,11 @@ gulp.task("qunit", function(){
 
 // Copy all static images 
 gulp.task('imagemin', function() {
-    // var jpgmin = imageminJpegRecompress({
-    //         accurate: true,//高精度模式
-    //         quality: "medium",//图像质量:low, medium, high and veryhigh;
-    //         method: "smallfry",//网格优化:mpe, ssim, ms-ssim and smallfry;
-    //         min: 70,//最低质量
-    //         loops: 0,//循环尝试次数, 默认为6;
-    //         progressive: false,//基线优化
-    //         subsample: "default"//子采样:default, disable;
-    //     });
     var pngmin = imageminOptipng({
             optimizationLevel: 5
         });
     gulp.src('src/resource/book/**/*.png')
         .pipe(imagemin({
-            // use: [jpgmin, pngmin]
             use: [pngmin]
         }))
         .pipe(gulp.dest('dev/resource/book'));
