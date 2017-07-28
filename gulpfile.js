@@ -45,7 +45,7 @@ var paths = {
 	lessDest: destDir + '/stylesheet',
 	appjs: 'src/js/*.js',
 	appjsDest: destDir + '/javascript',
-	venderJS: ['vendor/jquery/dist/jquery.min.js', 'vendor/lodash/dist/lodash.min.js'],
+	venderJS: ['vendor/jquery/dist/jquery.min.js', 'vendor/lodash/dist/lodash.min.js', 'vendor/requirejs/require.js'],
 	venderJSDest: destDir + '/javascript/libs',
 	appviews: 'src/views/*.html',
 	appviewsDest: destDir + '/views',
@@ -103,9 +103,6 @@ gulp.task('js', function() {
 		.pipe(gulp.dest(paths.appjsDest))
 		.pipe(browserSync.reload({stream:true}));
 	}else{
-		gulp.src(paths.venderJS)
-		.pipe(gulp.dest(paths.venderJSDest));
-		
 		return gulp.src(paths.appjs)
 		.pipe(babel({presets: ['es2015']}))
 		.pipe(gulp.dest(paths.appjsDest))

@@ -21,52 +21,193 @@
 	<p class="caption">body</p>
 	<header class="addBorder">
 		<p class="caption">header</p>
-		<h1>ECMA 2015</h1>
+		<h1>ECMA Script 2015</h1>
 	</header>
 
 	<nav class="addBorder">
 		<p class="caption">nav</p>		
 		<a href="index.html">Home</a>
 		<a href="http://es6.ruanyifeng.com/">tutorial</a>
+		<a href="http://www.ecma-international.org/ecma-262/6.0/">ECMA-262</a>
+		<a href="https://kangax.github.io/compat-table/es6/">browser compatibility table</a>
 	</nav>
 
 	<section class="addBorder">
 		<p class="caption">section</p>
 		<fieldset>				
-			<legend>Fixed design</legend>
-
+			<legend>Constants</legend>
+			<pre>
+const PI = 3.141593;
+PI = 1;
+PI > 3.0
+			</pre>
 		
 		</fieldset>
 
 		<fieldset>
-			<legend>Responsive Design Style 1</legend>
+			<legend>Scoping</legend>
+			<pre>
+for (let i = 0; i < a.length; i++) {
+    let x = a[i];
+}
+for (let i = 0; i < b.length; i++) {
+    let y = b[i];
+}
+
+let callbacks = []
+for (let i = 0; i <= 2; i++) {
+    callbacks[i] = function () { return i * 2 }
+}
+callbacks[0]() === 0
+callbacks[1]() === 2
+callbacks[2]() === 4
+			</pre>
+		</fieldset>
+
+		<fieldset>
+			<legend>Arrow Functions</legend>
+			<pre>
+let evens = [2,4,6,8,10];
+let odds  = evens.map(v => v + 1)
+let pairs = evens.map(v => ({ even: v, odd: v + 1 }))
+let nums  = evens.map((v, i) => v + i)
+			</pre>
 
 		</fieldset>
 
 		<fieldset>
-			<legend>Responsive Design Style 1</legend>
+			<legend>Rest Parameter</legend>
+			<pre>
+function f (x, y, ...a) {
+    return (x + y) * a.length
+}
+f(1, 2, "hello", true, 7) === 9;
+			</pre>
 
 		</fieldset>
 
 		<fieldset>
-			<legend>
-				SVG
-			</legend>
+			<legend>Spread Operator</legend>
+			<pre>
+var str = "foo";
+var chars = [ ...str ] // [ "f", "o", "o" ];
+			</pre>
 
 		</fieldset>
 
 		<fieldset>
-			<legend>
-				Audio
-			</legend>
+			<legend>Template Literals</legend>
+			<pre>
+var customer = { name: "Foo" }
+var card = { amount: 7, product: "Bar", unitprice: 42 }
+var message = `Hello ${customer.name},
+want to buy ${card.amount} ${card.product} for
+a total of ${card.amount * card.unitprice} bucks?`
+			</pre>
 
 		</fieldset>
 
 		<fieldset>
-			<legend>
-				Video
-			</legend>
-			
+			<legend>Enhanced Object Properties</legend>
+			<pre>
+obj = {
+	x: x,
+	y: y,
+	foo: function (a, b) {
+	    …
+	}
+};
+
+obj = {
+	x,
+	y,
+	foo (a, b) {
+	    …
+	}
+};
+			</pre>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Destructuring Assignment</legend>
+			<pre>
+let [a, b] = [1,2];
+[a,b]=[b,a];
+
+function foo(){return [1,2,3]}
+[a,b,c]=foo();
+
+function foo ([ name, age ]) {
+    console.log(name, age);
+}
+foo(["Harry", "18"]);
+			</pre>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Modules</legend>
+			<pre>
+//  lib/math.js
+export function sum (x, y) { return x + y }
+export var pi = 3.141593
+
+//  someApp.js
+import * as math from "lib/math"
+console.log("2π = " + math.sum(math.pi, math.pi))
+
+//  otherApp.js
+import { sum, pi } from "lib/math"
+console.log("2π = " + sum(pi, pi))
+			</pre>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Classes</legend>
+			<pre>
+class Shape {
+    constructor (id, x, y) {
+        this.id = id
+        this.move(x, y)
+    }
+    move (x, y) {
+        this.x = x
+        this.y = y
+    }
+}
+
+class Rectangle extends Shape {
+    constructor (id, x, y, width, height) {
+        super(id, x, y)
+        this.width  = width
+        this.height = height
+    }
+}
+class Circle extends Shape {
+    constructor (id, x, y, radius) {
+        super(id, x, y)
+        this.radius = radius
+    }
+}
+			</pre>
+
+		</fieldset>
+
+		<fieldset>
+			<legend></legend>
+			<pre>
+				
+			</pre>
+
+		</fieldset>
+
+		<fieldset>
+			<legend></legend>
+			<pre>
+				
+			</pre>
 
 		</fieldset>
 	</section>
@@ -77,7 +218,6 @@
 
 	<script src="/javascript/libs/jquery.min.js" async></script>
 	<script src="/javascript/libs/lodash.min.js" async></script>
-	<script src="/javascript/recorder.js" async></script>
 
 </body>
 </html>
