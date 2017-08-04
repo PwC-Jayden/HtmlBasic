@@ -16,6 +16,8 @@
 
 	<link rel="stylesheet" href="/stylesheet/common.css" />
 	<link rel="stylesheet" href="/stylesheet/less_introduction.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/rainbow.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 <body class="addBorder">
 	<p class="caption">body</p>
@@ -39,7 +41,7 @@
 			<legend>Nested Rules</legend>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 #header {
   color: black;
 }
@@ -49,11 +51,11 @@
 #header .logo {
   width: 300px;
 }
-				</pre>
+				</code></pre>
 			</div>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 #header {
   color: black;
   .navigation {
@@ -63,7 +65,7 @@
     width: 300px;
   }
 }
-				</pre>
+				</code></pre>
 			</div>		
 		</fieldset>
 
@@ -71,14 +73,14 @@
 			<legend>Variables</legend>
 
 			<div>
-				<pre>					
+				<pre><code class="Less">					
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 
 #header {
   color: @light-blue;
 }
-				</pre>
+				</code></pre>
 			</div>		
 		</fieldset>
 
@@ -86,7 +88,7 @@
 			<legend>Operations</legend>
 			
 			<div>
-				<pre>
+				<pre><code class="Less">
 // numbers are converted into the same units
 @conversion-1: 5cm + 10mm; // result is 6cm
 @conversion-2: 2 - 3cm - 5mm; // result is -1.5cm
@@ -98,7 +100,7 @@
 @base: 5%;
 @filler: @base * 2; // result is 10%
 @other: @base + @filler; // result is 15%
-				</pre>
+				</code></pre>
 			</div>
 		</fieldset>
 
@@ -106,16 +108,16 @@
 			<legend>Mixins</legend>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 .bordered {
   border-top: dotted 1px black;
   border-bottom: solid 2px black;
 }
-				</pre>
+				</code></pre>
 			</div>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 #menu a {
   color: #111;
   .bordered;
@@ -125,7 +127,7 @@
   color: red;
   .bordered;
 }
-				</pre>
+				</code></pre>
 			</div>	
 		</fieldset>
 
@@ -133,24 +135,24 @@
 			<legend>Parametric Mixins</legend>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 .border-radius(@radius: 5px) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
-				</pre>
+				</code></pre>
 			</div>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 #header {
   .border-radius(4px);
 }
 .button {
   .border-radius(6px);
 }
-				</pre>
+				</code></pre>
 			</div>	
 		</fieldset>
 
@@ -158,10 +160,10 @@
 			<legend>Importing</legend>
 
 			<div>
-				<pre>
+				<pre><code class="Less">
 @import "library"; // library.less
 @import "typo.css";
-				</pre>
+				</code></pre>
 			</div>
 		</fieldset>
 	</section>
@@ -173,6 +175,6 @@
 	<script src="/javascript/libs/jquery.min.js" async></script>
 	<script src="/javascript/libs/lodash.min.js" async></script>
 	<script src="/javascript/recorder.js" async></script>
-
+	<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
