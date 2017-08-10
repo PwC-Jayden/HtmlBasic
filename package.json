@@ -7,7 +7,7 @@
     "build": "gulp --env dev",
     "test": "gulp test --env test",
     "prod": "gulp --env prod",
-    "dev": "gulp watch"
+    "dev": "gulp browserSync --env dev"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",

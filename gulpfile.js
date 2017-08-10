@@ -159,7 +159,8 @@ gulp.task('watch', function() {
 gulp.task('browserSync', ['less', 'js'], function() {
 	//	set server
     browserSync.init({
-        server: destDir
+        server: destDir,
+        startPath: '/views/index.html'
     });
 
     gulp.watch(paths.less, ['less']);
