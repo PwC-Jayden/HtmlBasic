@@ -27,5 +27,3 @@ How to use:
 //	start dev environment
 
 	5. >npm run dev
-	
-	6. start "startserver.cmd" in dev folder
